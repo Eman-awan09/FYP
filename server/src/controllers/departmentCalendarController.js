@@ -3,7 +3,7 @@ const {
   DepartmentCalendarEntry,
   CALENDAR_KEYS,
 } = require("../models/DepartmentCalendarEntry");
-
+   
 /**
  * ADMIN: create or update a department calendar entry
  * POST /api/calendar
