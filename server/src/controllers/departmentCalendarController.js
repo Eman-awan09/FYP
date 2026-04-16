@@ -8,7 +8,7 @@ const {
  * ADMIN: create or update a department calendar entry
  * POST /api/calendar
  * Body: { department, key, date, note }
- */
+ */  
 const upsertDepartmentCalendarEntry = async (req, res, next) => {
   try {
     const { department, key, date, note } = req.body || {};
