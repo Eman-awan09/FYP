@@ -1,0 +1,243 @@
+.scc-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Header */
+.scc-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.scc-header__left {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.scc-icon-btn {
+  border: none;
+  background: transparent;
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #111827;
+  transition: background 0.18s ease, transform 0.15s ease;
+}
+
+.scc-icon-btn:hover {
+  background: rgba(15, 23, 42, 0.06);
+  transform: translateY(-1px);
+}
+
+.scc-header__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.scc-title {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text, #111827);
+}
+
+.scc-title__icon {
+  color: var(--primary, #111827);
+}
+
+.scc-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted, #6b7280);
+  max-width: 560px;
+}
+
+/* Header meta */
+.scc-header__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.3rem;
+}
+
+.scc-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  font-size: 0.78rem;
+}
+
+.scc-meta-label {
+  color: var(--text-muted, #6b7280);
+}
+
+.scc-meta-value {
+  color: var(--text, #111827);
+  font-weight: 500;
+}
+
+/* Error */
+.scc-error {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 0.6rem;
+  background: rgba(254, 226, 226, 0.95);
+  color: #b91c1c;
+  font-size: 0.8rem;
+}
+
+/* Main grid */
+.scc-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+  gap: 1.1rem;
+  align-items: flex-start;
+}
+
+/* Cards */
+.scc-card {
+  background: #fff;
+  border-radius: 1.1rem;
+  padding: 1.1rem 1.2rem 1.3rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+/* Form card */
+.scc-card--form {
+  padding: 1.1rem 1.2rem 1.35rem;
+}
+
+.scc-card__header {
+  margin-bottom: 0.75rem;
+}
+
+.scc-card__title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text, #111827);
+}
+
+.scc-card__subtitle {
+  margin: 0.3rem 0 0;
+  font-size: 0.82rem;
+  color: var(--text-muted, #6b7280);
+}
+
+.scc-form-wrapper {
+  margin-top: 0.4rem;
+}
+
+/* Tips card */
+.scc-card--side {
+  padding: 1.1rem 1.2rem 1.3rem;
+  font-size: 0.8rem;
+}
+
+.scc-side-badge {
+  display: inline-flex;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-bottom: 0.6rem;
+}
+
+.scc-side-title {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text, #111827);
+}
+
+.scc-side-text {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted, #4b5563);
+}
+
+.scc-side-list {
+  margin: 0.85rem 0 0.6rem;
+  padding-left: 1.1rem;
+  font-size: 0.8rem;
+  color: var(--text, #111827);
+}
+
+.scc-side-list li {
+  margin-bottom: 0.3rem;
+}
+
+.scc-side-note {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--text-muted, #6b7280);
+}
+
+.scc-side-note a {
+  color: var(--primary, #111827);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Spinner (if re-used) */
+.scc-spinner {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 3px solid rgba(209, 213, 219, 1);
+  border-top-color: #111827;
+  display: inline-block;
+  animation: scc-spin 0.8s linear infinite;
+}
+
+@keyframes scc-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .scc-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .scc-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .scc-card--side {
+    order: -1; /* show tips above form on small devices */
+  }
+}
+
+@media (max-width: 640px) {
+  .scc-title {
+    font-size: 1.3rem;
+  }
+
+  .scc-card {
+    padding-inline: 1rem;
+  }
+}

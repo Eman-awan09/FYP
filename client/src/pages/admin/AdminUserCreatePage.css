@@ -1,0 +1,339 @@
+.auc-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Header */
+.auc-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.auc-header__left {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.auc-icon-btn {
+  border: none;
+  background: transparent;
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #111827;
+  transition: background 0.18s ease, transform 0.15s ease;
+}
+
+.auc-icon-btn:hover {
+  background: rgba(15, 23, 42, 0.06);
+  transform: translateY(-1px);
+}
+
+.auc-header__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.auc-title {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text, #111827);
+}
+
+.auc-title__icon {
+  color: var(--primary, #111827);
+}
+
+.auc-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted, #6b7280);
+  max-width: 560px;
+}
+
+/* Header meta */
+.auc-header__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.3rem;
+}
+
+.auc-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  font-size: 0.78rem;
+}
+
+.auc-meta-label {
+  color: var(--text-muted, #6b7280);
+}
+
+.auc-meta-value {
+  color: var(--text, #111827);
+  font-weight: 500;
+}
+
+/* Info banner */
+.auc-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.7rem;
+  background: rgba(254, 243, 199, 0.95);
+  border: 1px solid rgba(253, 224, 71, 0.8);
+  color: #854d0e;
+  font-size: 0.8rem;
+}
+
+/* Main grid */
+.auc-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+  gap: 1.1rem;
+  align-items: flex-start;
+}
+
+/* Cards */
+.auc-card {
+  background: #fff;
+  border-radius: 1.1rem;
+  padding: 1.1rem 1.2rem 1.3rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+/* Form card */
+.auc-card--form {
+  padding: 1.1rem 1.2rem 1.35rem;
+}
+
+.auc-card__header {
+  margin-bottom: 0.75rem;
+}
+
+.auc-card__title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text, #111827);
+}
+
+.auc-card__subtitle {
+  margin: 0.3rem 0 0;
+  font-size: 0.82rem;
+  color: var(--text-muted, #6b7280);
+}
+
+/* Form */
+.auc-form {
+  margin-top: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.auc-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text, #111827);
+}
+
+.auc-required {
+  color: #b91c1c;
+  margin-left: 2px;
+}
+
+/* Input wrapper */
+.auc-input-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.auc-input-box:focus-within {
+  border-color: #111827;
+  box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.08);
+}
+
+.auc-input-icon {
+  margin-right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  flex-shrink: 0;
+}
+
+/* Inputs & selects */
+.auc-input,
+.auc-select {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--text, #111827);
+  background: transparent;
+  min-width: 0;
+}
+
+.auc-input::placeholder {
+  color: var(--text-muted, #9ca3af);
+}
+
+.auc-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 18px;
+  background-image: linear-gradient(45deg, transparent 50%, #111827 50%),
+    linear-gradient(135deg, #111827 50%, transparent 50%);
+  background-position: calc(100% - 12px) 50%, calc(100% - 8px) 50%;
+  background-size: 4px 4px, 4px 4px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+/* Submit button */
+.auc-submit-btn {
+  margin-top: 6px;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  background: #000;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background 0.2s ease, opacity 0.2s ease;
+  box-shadow: 0 2px 10px rgba(188, 188, 210, 0.2),
+    0 0 0 4px rgba(224, 224, 235, 0.7);
+  width: 100%;
+  text-align: center;
+}
+
+.auc-submit-btn:hover:not(:disabled) {
+  background: #111827;
+  transform: translateY(-2px);
+}
+
+.auc-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Side card */
+.auc-card--side {
+  padding: 1.1rem 1.2rem 1.3rem;
+}
+
+.auc-side-badge {
+  display: inline-flex;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-bottom: 0.6rem;
+}
+
+.auc-side-title {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text, #111827);
+}
+
+.auc-side-text {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted, #4b5563);
+}
+
+.auc-side-list {
+  margin: 0.85rem 0 0.6rem;
+  padding-left: 1.1rem;
+  font-size: 0.8rem;
+  color: var(--text, #111827);
+}
+
+.auc-side-list li {
+  margin-bottom: 0.3rem;
+}
+
+.auc-side-note {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--text-muted, #6b7280);
+}
+
+.auc-side-note a {
+  color: var(--primary, #111827);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .auc-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .auc-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .auc-card--side {
+    order: -1; /* show guidelines above form on small devices */
+  }
+}
+
+@media (max-width: 640px) {
+  .auc-title {
+    font-size: 1.25rem;
+  }
+
+  .auc-header__meta {
+    width: 100%;
+  }
+
+  .auc-meta-item {
+    flex: 1 1 45%;
+  }
+
+  .auc-info {
+    width: 100%;
+  }
+}

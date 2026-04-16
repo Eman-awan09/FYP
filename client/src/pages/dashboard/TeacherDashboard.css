@@ -1,0 +1,560 @@
+.teacher-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* ===== Header ===== */
+.teacher-dashboard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.teacher-dashboard__title {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text, #111827);
+}
+
+.teacher-dashboard__subtitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-muted, #6b7280);
+}
+
+.teacher-dashboard__header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Buttons aligned with hero theme */
+.td-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background 0.2s ease, color 0.2s ease;
+}
+
+.td-btn--primary {
+  background: #000;
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(188, 188, 210, 0.2),
+    0 0 0 4px rgba(224, 224, 235, 0.7);
+}
+
+.td-btn--primary:hover {
+  transform: translateY(-2px);
+}
+
+.td-btn--ghost {
+  background: transparent;
+  color: var(--primary, #111827);
+  border: 1px solid var(--primary, #111827);
+}
+
+.td-btn--ghost:hover {
+  transform: translateY(-2px);
+}
+
+/* ===== Sections & Grids ===== */
+.teacher-dashboard__section {
+  display: block;
+}
+
+.td-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Top row: 4 equal cards */
+.td-grid--top {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Main row: complaints table + side column */
+.td-grid--main {
+  grid-template-columns: 2.1fr 1.1fr;
+  align-items: flex-start;
+}
+
+/* Side column */
+.td-grid--side {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* Bottom row: profile + tips */
+.td-grid--bottom {
+  grid-template-columns: 1.4fr 1.6fr;
+}
+
+/* ===== Cards ===== */
+.td-card {
+  background: #fff;
+  border-radius: 1.1rem;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.td-card--panel {
+  padding: 1.1rem 1.1rem 1.25rem;
+}
+
+/* Stat cards */
+.td-card--stat {
+  position: relative;
+  overflow: hidden;
+}
+
+.td-card__header-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.3rem;
+}
+
+.td-card__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text, #111827);
+}
+
+.td-card__label {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted, #6b7280);
+}
+
+/* Stat numbers / breakdown */
+.td-card__stat-main {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.td-card__stat-number {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--text, #111827);
+}
+
+.td-card__stat-caption {
+  font-size: 0.75rem;
+  color: var(--text-muted, #6b7280);
+}
+
+.td-card__stat-row {
+  margin-top: 0.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  font-size: 0.75rem;
+  color: var(--text-muted, #6b7280);
+}
+
+/* Tone gradient glow dots */
+.td-card--success::after,
+.td-card--warning::after,
+.td-card--info::after,
+.td-card--neutral::after,
+.td-card--chatbot::after {
+  content: "";
+  position: absolute;
+  inset: auto -20px -40px auto;
+  width: 120px;
+  height: 120px;
+  border-radius: 100px;
+  opacity: 0.2;
+  filter: blur(10px);
+}
+
+.td-card--warning::after {
+  background: radial-gradient(circle, #f97316, #c2410c);
+}
+.td-card--info::after {
+  background: radial-gradient(circle, #0ea5e9, #0369a1);
+}
+.td-card--neutral::after {
+  background: radial-gradient(circle, #a855f7, #6d28d9);
+}
+.td-card--chatbot::after {
+  background: radial-gradient(circle, #22c55e, #15803d);
+}
+
+/* Chatbot quick input */
+.td-chat-quick {
+  margin-top: 0.7rem;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.td-chat-quick__input {
+  flex: 1;
+  border-radius: 10px;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid rgba(209, 213, 219, 1);
+  font-size: 0.8rem;
+}
+
+.td-chat-quick__btn {
+  border-radius: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* Panel headers */
+.td-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.8rem;
+}
+
+.td-card__subtitle {
+  margin: 0.3rem 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted, #6b7280);
+}
+
+/* Link styles */
+.td-link-inline,
+.td-link-btn {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--primary, #111827);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+/* ===== Table styles (recent complaints) ===== */
+.td-table__wrapper {
+  overflow-x: auto;
+}
+
+.td-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.td-table th,
+.td-table td {
+  padding: 0.45rem 0.4rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.td-table thead tr {
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.td-table th {
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: var(--text-muted, #6b7280);
+}
+
+.td-table tbody tr:nth-child(even) {
+  background: rgba(248, 250, 252, 0.7);
+}
+
+/* ===== Badges ===== */
+.td-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+/* Status badges: pending, in_progress, resolved, approved, rejected */
+.td-badge--status {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.td-badge--pending {
+  background: rgba(254, 249, 195, 0.9);
+  color: #854d0e;
+}
+.td-badge--in_progress {
+  background: rgba(254, 243, 199, 0.8);
+  color: #92400e;
+}
+.td-badge--resolved {
+  background: rgba(220, 252, 231, 0.9);
+  color: #166534;
+}
+.td-badge--approved {
+  background: rgba(209, 250, 229, 0.9);
+  color: #166534;
+}
+.td-badge--rejected {
+  background: rgba(254, 202, 202, 0.9);
+  color: #b91c1c;
+}
+
+/* Priority badges: high, intermediate, critical (from teacher complaints) */
+.td-badge--priority {
+  border-radius: 0.8rem;
+}
+
+.td-badge--high {
+  background: rgba(248, 113, 113, 0.1);
+  color: #b91c1c;
+  border: 1px solid rgba(248, 113, 113, 0.6);
+}
+.td-badge--intermediate {
+  background: rgba(253, 224, 71, 0.1);
+  color: #92400e;
+  border: 1px solid rgba(251, 191, 36, 0.6);
+}
+.td-badge--critical {
+  background: rgba(239, 68, 68, 0.1);
+  color: #b91c1c;
+  border: 1px solid rgba(239, 68, 68, 0.75);
+}
+
+/* ===== Lists for events & resources ===== */
+.td-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.td-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.td-list__item--space {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.td-list__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #22c55e;
+  margin-top: 0.3rem;
+}
+
+.td-list__content {
+  flex: 1;
+}
+
+.td-list__title {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text, #111827);
+}
+
+.td-list__meta {
+  margin: 0.1rem 0 0;
+  font-size: 0.75rem;
+  color: var(--text-muted, #6b7280);
+}
+
+/* ===== Profile snapshot ===== */
+.td-card--profile {
+  background: linear-gradient(
+      135deg,
+      rgba(15, 23, 42, 0.96),
+      rgba(15, 23, 42, 0.92)
+    ),
+    #020617;
+  color: #e5e7eb;
+}
+
+.td-card--profile .td-card__title {
+  color: #f9fafb;
+}
+
+.td-card--profile .td-card__subtitle {
+  color: #9ca3af;
+}
+
+.td-profile {
+  margin-top: 0.6rem;
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+}
+
+.td-profile__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 1.2rem;
+  background: radial-gradient(circle at top, #111827 0, #111827 40%, #4b5563 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #f9fafb;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.7);
+}
+
+.td-profile__info {
+  flex: 1;
+}
+
+.td-profile__name {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.td-profile__meta {
+  margin: 0.1rem 0 0;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.td-profile__stats {
+  margin-top: 0.6rem;
+  display: flex;
+  gap: 1.1rem;
+  font-size: 0.78rem;
+}
+
+.td-profile__stat-label {
+  display: block;
+  color: #9ca3af;
+}
+
+.td-profile__stat-value {
+  display: block;
+  margin-top: 0.1rem;
+  font-weight: 600;
+}
+
+/* ===== Tips card ===== */
+.td-card--tips {
+  font-size: 0.8rem;
+}
+
+.td-tips {
+  margin: 0.6rem 0 0;
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.td-tips li {
+  color: var(--text, #111827);
+}
+
+.td-tips code {
+  background: #e5e7eb;
+  padding: 0 0.25rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+/* Title + icon inline layout inside cards */
+.td-card__title-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Small circle around icons in cards */
+.td-card__circle-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(243, 244, 246, 1);
+  color: #111827;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+}
+
+.td-card__circle-icon--soft {
+  background: rgba(248, 250, 252, 0.9);
+}
+
+/* Optional: icon inside "Edit Profile" link sits nicely */
+.td-card__header .td-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1200px) {
+  .td-grid--top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .td-grid--main {
+    grid-template-columns: 1.8fr 1.2fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .teacher-dashboard__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .td-grid--main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .td-grid--bottom {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .td-grid--top {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .teacher-dashboard__title {
+    font-size: 1.35rem;
+  }
+}

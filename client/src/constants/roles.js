@@ -1,0 +1,8 @@
+// src/constants/roles.js
+export const USER_ROLES = {
+  STUDENT: "STUDENT",
+  TEACHER: "TEACHER",
+  SERVICE_PROVIDER: "SERVICE_PROVIDER",
+  SERVER_ROOM_STAFF: "SERVER_ROOM_STAFF",
+  ADMIN: "ADMIN",
+};

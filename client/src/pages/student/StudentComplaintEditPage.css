@@ -1,0 +1,348 @@
+.sce-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Centered layout for loading / locked / not found */
+.sce-wrap--center {
+  min-height: 60vh;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Header */
+.sce-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.sce-header__left {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.sce-icon-btn {
+  border: none;
+  background: transparent;
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #111827;
+  transition: background 0.18s ease, transform 0.15s ease;
+}
+
+.sce-icon-btn:hover {
+  background: rgba(15, 23, 42, 0.06);
+  transform: translateY(-1px);
+}
+
+.sce-header__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sce-title {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text, #111827);
+}
+
+.sce-title__icon {
+  color: var(--primary, #111827);
+}
+
+.sce-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted, #6b7280);
+  max-width: 560px;
+}
+
+/* Header meta */
+.sce-header__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.3rem;
+}
+
+.sce-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  font-size: 0.78rem;
+}
+
+.sce-meta-label {
+  color: var(--text-muted, #6b7280);
+}
+
+.sce-meta-value {
+  color: var(--text, #111827);
+  font-weight: 500;
+}
+
+.sce-meta-value--mono {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.72rem;
+  background: rgba(249, 250, 251, 1);
+  padding: 0.18rem 0.4rem;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(229, 231, 235, 1);
+}
+
+/* Status badge */
+.sce-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.12rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  background: #111827;
+  color: #f9fafb;
+}
+
+/* Error banner */
+.sce-error {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 0.6rem;
+  background: rgba(254, 226, 226, 0.95);
+  color: #b91c1c;
+  font-size: 0.8rem;
+}
+
+/* Main layout */
+.sce-section {
+  display: block;
+}
+
+.sce-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+  gap: 1.1rem;
+  align-items: flex-start;
+}
+
+/* Cards */
+.sce-card {
+  background: #fff;
+  border-radius: 1.1rem;
+  padding: 1.1rem 1.2rem 1.35rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+/* Form card */
+.sce-card--form {
+  padding: 1.1rem 1.2rem 1.35rem;
+}
+
+.sce-card__header {
+  margin-bottom: 0.75rem;
+}
+
+.sce-card__title-block {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+}
+
+.sce-card__icon-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 0.9rem;
+  background: #111827;
+  color: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sce-card__title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text, #111827);
+}
+
+.sce-card__subtitle {
+  margin: 0.3rem 0 0;
+  font-size: 0.82rem;
+  color: var(--text-muted, #6b7280);
+}
+
+.sce-form-wrapper {
+  margin-top: 0.4rem;
+}
+
+/* Side card */
+.sce-card--side {
+  padding: 1.1rem 1.2rem 1.3rem;
+  font-size: 0.8rem;
+}
+
+.sce-side-badge {
+  display: inline-flex;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-bottom: 0.6rem;
+}
+
+.sce-side-title {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text, #111827);
+}
+
+.sce-side-text {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted, #4b5563);
+}
+
+.sce-tips {
+  margin: 0.8rem 0 0.6rem;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sce-side-note {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--text-muted, #6b7280);
+}
+
+/* Status cards (centered states) */
+.sce-card--status {
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+}
+
+.sce-card--status h2 {
+  margin: 0.4rem 0 0.2rem;
+  font-size: 1.1rem;
+}
+
+.sce-card--status p {
+  margin: 0.2rem 0 0;
+  font-size: 0.85rem;
+  color: var(--text-muted, #4b5563);
+}
+
+.sce-card--error {
+  color: #b91c1c;
+}
+
+.sce-card--locked {
+  color: var(--text, #111827);
+}
+
+.sce-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: rgba(243, 244, 246, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.4rem;
+}
+
+/* Buttons for centered states */
+.sce-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.sce-btn--primary {
+  background: #000;
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(188, 188, 210, 0.2),
+    0 0 0 4px rgba(224, 224, 235, 0.9);
+}
+
+.sce-btn--primary:hover {
+  transform: translateY(-2px);
+}
+
+/* Spinner */
+.sce-spinner {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  border: 3px solid rgba(209, 213, 219, 1);
+  border-top-color: #111827;
+  display: inline-block;
+  animation: sce-spin 0.8s linear infinite;
+}
+
+@keyframes sce-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .sce-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sce-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sce-card--side {
+    order: -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .sce-title {
+    font-size: 1.3rem;
+  }
+
+  .sce-card {
+    padding-inline: 1rem;
+  }
+}

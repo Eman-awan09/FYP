@@ -1,0 +1,181 @@
+.textchange-section {
+  width: 100%;
+  padding: 3.2rem 1.5rem 3.4rem;
+  box-sizing: border-box;
+  background: radial-gradient(circle at top, #f3f4f6 0, #ffffff 55%, #ffffff 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Inner max width to align with hero/navbar */
+.textchange-section > * {
+  max-width: 900px;
+}
+
+/* Icon block above text */
+.bento-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.28);
+  margin-bottom: 1rem;
+}
+
+.bento-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Default: light icon visible, dark hidden (for future theme toggle) */
+.light-icon {
+  opacity: 1;
+}
+.dark-icon {
+  opacity: 0;
+}
+
+/* Subtitle */
+.loop-subtitle {
+  margin: 0 0 1.4rem;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--text-muted, #6b7280);
+}
+
+/* Main text container with glow frame */
+.text-container {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1.6rem;
+  border-radius: 1.1rem;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+}
+
+/* Bigger animated content */
+.changing-text {
+  margin: 0;
+  font-size: 1.5rem; /* larger headline style */
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--text, #111827);
+  z-index: 1;
+}
+
+/* Decorative glow frame */
+.glow-frame {
+  pointer-events: none;
+  position: absolute;
+  inset: 0.38rem;
+  border-radius: 0.95rem;
+  border: 1px dashed rgba(148, 163, 184, 0.6);
+}
+
+/* Corner accents */
+.corner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 2px solid rgba(15, 23, 42, 0.6);
+  box-sizing: border-box;
+}
+
+.top-left {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+}
+.top-right {
+  top: -2px;
+  right: -2px;
+  border-left: none;
+  border-bottom: none;
+}
+.bottom-right {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+}
+.bottom-left {
+  bottom: -2px;
+  left: -2px;
+  border-right: none;
+  border-top: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .textchange-section {
+    padding: 2.9rem 1.5rem 3rem;
+  }
+
+  .changing-text {
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .textchange-section {
+    padding: 2.6rem 1.3rem 2.7rem;
+  }
+
+  .bento-icon {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 0.9rem;
+  }
+
+  .loop-subtitle {
+    font-size: 0.94rem;
+  }
+
+  .text-container {
+    padding: 0.9rem 1.3rem;
+  }
+
+  .changing-text {
+    font-size: 1.18rem;
+  }
+
+  .glow-frame {
+    inset: 0.32rem;
+  }
+
+  .corner {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .textchange-section {
+    padding: 2.3rem 1rem 2.4rem;
+  }
+
+  .loop-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .changing-text {
+    font-size: 1.05rem;
+  }
+
+  .text-container {
+    padding: 0.85rem 1.1rem;
+  }
+
+  .bento-icon {
+    width: 48px;
+    height: 48px;
+  }
+}

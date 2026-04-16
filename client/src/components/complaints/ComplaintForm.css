@@ -1,0 +1,177 @@
+.complaint-form {
+  max-width: 640px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* Field block */
+.cf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cf-field--inline {
+  max-width: 260px;
+}
+
+/* Labels */
+.cf-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text, #111827);
+}
+
+.cf-required {
+  color: #b91c1c;
+  margin-left: 2px;
+}
+
+/* Input box with icon */
+.cf-input-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.cf-input-box--textarea {
+  align-items: flex-start;
+}
+
+.cf-input-box--small {
+  max-width: 220px;
+}
+
+.cf-input-box--file {
+  max-width: 100%;
+}
+
+.cf-input-box:focus-within {
+  border-color: #111827;
+  box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.08);
+}
+
+/* Icon inside input */
+.cf-input-icon {
+  margin-right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  flex-shrink: 0;
+}
+
+/* Inputs */
+.cf-input,
+.cf-textarea,
+.cf-select {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--text, #111827);
+  background: transparent;
+  min-width: 0;
+}
+
+.cf-input::placeholder,
+.cf-textarea::placeholder {
+  color: var(--text-muted, #9ca3af);
+}
+
+/* Textarea */
+.cf-textarea {
+  resize: vertical;
+  min-height: 90px;
+  padding-top: 4px;
+}
+
+/* Select */
+.cf-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 18px;
+  background-image: linear-gradient(45deg, transparent 50%, #111827 50%),
+    linear-gradient(135deg, #111827 50%, transparent 50%);
+  background-position: calc(100% - 12px) 50%, calc(100% - 8px) 50%;
+  background-size: 4px 4px, 4px 4px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+/* File input area */
+.cf-file-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cf-file-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+/* File list */
+.cf-file-list {
+  list-style: disc;
+  padding-left: 1.2rem;
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--text-muted, #6b7280);
+}
+
+.cf-file-item {
+  margin-bottom: 2px;
+}
+
+/* Submit button (aligned with theme buttons) */
+.cf-submit-btn {
+  margin-top: 4px;
+  border: none;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  background: #000;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background 0.2s ease, opacity 0.2s ease;
+  box-shadow: 0 2px 10px rgba(188, 188, 210, 0.2),
+    0 0 0 4px rgba(224, 224, 235, 0.7);
+  width: 100%;
+  text-align: center;
+}
+
+.cf-submit-btn:hover:not(:disabled) {
+  background: #111827;
+  transform: translateY(-2px);
+}
+
+.cf-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .complaint-form {
+    max-width: 100%;
+  }
+
+  .cf-field--inline {
+    max-width: 100%;
+  }
+}

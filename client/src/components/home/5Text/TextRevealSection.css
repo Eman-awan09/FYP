@@ -1,0 +1,132 @@
+.text-reveal-container {
+  width: 100%;
+  padding: 3.2rem 1.5rem 3.4rem;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-top: 1px solid rgba(229, 231, 235, 0.9);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.9);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Centered inner max width to align with hero/navbar */
+.text-reveal-container > * {
+  max-width: 900px;
+}
+
+/* Icon wrapper above text */
+.reveal-icon {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 1.4rem;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.28);
+  margin-bottom: 1rem;
+}
+
+.reveal-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Default: show light icon only (you can toggle using theme later) */
+.light-icon {
+  opacity: 1;
+}
+.dark-icon {
+  opacity: 0;
+}
+
+/* Tagline pill */
+.reveal-tagline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(209, 213, 219, 1);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted, #6b7280);
+  margin-bottom: 1.1rem;
+}
+
+/* Main reveal text */
+.reveal-text {
+  margin: 0 auto;
+  font-size: 1.2rem;          /* bigger, but still readable */
+  line-height: 1.9;
+  color: var(--text, #111827);
+  padding: 0 0.25rem;
+}
+
+/* Letters animated by GSAP */
+.reveal-letter {
+  display: inline-block;
+  will-change: opacity, filter;
+}
+
+/* Space width for consistent letter spacing */
+.reveal-letter.space {
+  width: 0.35rem;
+}
+
+/* ===== Responsive breakpoints ===== */
+@media (max-width: 1024px) {
+  .text-reveal-container {
+    padding: 2.8rem 1.5rem 3rem;
+  }
+
+  .reveal-text {
+    font-size: 1.08rem;
+    line-height: 1.8;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-reveal-container {
+    padding: 2.5rem 1.3rem 2.7rem;
+  }
+
+  .reveal-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.9rem;
+  }
+
+  .reveal-tagline {
+    font-size: 0.8rem;
+  }
+
+  .reveal-text {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+}
+
+@media (max-width: 640px) {
+  .text-reveal-container {
+    padding: 2.2rem 1rem 2.4rem;
+  }
+
+  .reveal-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .reveal-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .reveal-tagline {
+    font-size: 0.78rem;
+  }
+}

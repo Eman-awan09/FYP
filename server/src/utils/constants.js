@@ -1,0 +1,43 @@
+// src/utils/constants.js
+
+// Roles supported in the system
+const USER_ROLES = {
+  STUDENT: 'STUDENT',
+  TEACHER: 'TEACHER',
+  SERVICE_PROVIDER: 'SERVICE_PROVIDER',
+  SERVER_ROOM_STAFF: 'SERVER_ROOM_STAFF',
+  ADMIN: 'ADMIN',
+};
+
+// Complaint priorities
+const PRIORITIES = {
+  INTERMEDIATE: 'INTERMEDIATE',
+  HIGH: 'HIGH',
+  CRITICAL: 'CRITICAL', // optional for teachers/admin
+};
+
+// Complaint statuses
+const COMPLAINT_STATUSES = {
+  PENDING: 'PENDING',
+  APPROVED: 'APPROVED',
+  REJECTED: 'REJECTED',
+  ASSIGNED: 'ASSIGNED',
+  IN_PROGRESS: 'IN_PROGRESS',
+  RESOLVED: 'RESOLVED',
+  CLOSED: 'CLOSED',
+};
+
+// Resource request statuses
+const RESOURCE_REQUEST_STATUSES = {
+  PENDING: 'PENDING',
+  APPROVED: 'APPROVED',
+  REJECTED: 'REJECTED',
+  COMPLETED: 'COMPLETED',
+};
+
+module.exports = {
+  USER_ROLES,
+  PRIORITIES,
+  COMPLAINT_STATUSES,
+  RESOURCE_REQUEST_STATUSES,
+};

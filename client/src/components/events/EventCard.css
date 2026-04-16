@@ -1,0 +1,104 @@
+.evc-card {
+  border-radius: 1rem;
+  padding: 0.9rem 1rem;
+  background: #fff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Header */
+.evc-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.evc-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 0.9rem;
+  background: rgba(243, 244, 246, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111827;
+}
+
+.evc-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+}
+
+.evc-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text, #111827);
+}
+
+.evc-date {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted, #6b7280);
+}
+
+/* Body */
+.evc-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.2rem;
+}
+
+.evc-row {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  color: var(--text, #111827);
+}
+
+.evc-row-icon {
+  color: var(--text-muted, #6b7280);
+  flex-shrink: 0;
+}
+
+.evc-row-label {
+  font-weight: 500;
+}
+
+.evc-row-value {
+  color: var(--text, #111827);
+}
+
+/* Description */
+.evc-description {
+  margin: 0.35rem 0 0;
+  font-size: 0.82rem;
+  color: var(--text-muted, #4b5563);
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .evc-card {
+    padding: 0.8rem 0.85rem;
+  }
+
+  .evc-title {
+    font-size: 0.95rem;
+  }
+
+  .evc-date {
+    font-size: 0.78rem;
+  }
+
+  .evc-row {
+    font-size: 0.8rem;
+  }
+}

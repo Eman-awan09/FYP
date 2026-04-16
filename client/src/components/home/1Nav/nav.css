@@ -1,0 +1,236 @@
+.app-navbar {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(249, 250, 251, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.9);
+}
+
+/* Wide inner container */
+.app-navbar__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.6rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Brand */
+.app-navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+}
+
+.app-navbar__logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 0.9rem;
+  overflow: hidden;
+  background: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-navbar__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.app-navbar__brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.02rem;
+}
+
+.app-navbar__brand-title {
+  font-size: 0.98rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--text, #111827);
+}
+
+.app-navbar__brand-subtitle {
+  font-size: 0.72rem;
+  color: var(--text-muted, #6b7280);
+}
+
+/* Center nav (desktop) */
+.app-navbar__nav {
+  display: flex;
+  align-items: center;
+}
+
+.app-navbar__nav--desktop {
+  gap: 1.3rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.app-navbar__link {
+  font-size: 0.85rem;
+  color: var(--text-muted, #6b7280);
+  text-decoration: none;
+  padding: 0.25rem 0.1rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.app-navbar__link:hover {
+  color: var(--text, #111827);
+}
+
+.app-navbar__link--active {
+  color: var(--text, #111827);
+  border-color: #111827;
+}
+
+/* Right area: desktop actions + mobile toggle */
+.app-navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Actions (desktop) */
+.app-navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.app-navbar__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 999px;
+  padding: 0.38rem 0.95rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.app-navbar__btn--primary {
+  background: #000;
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(188, 188, 210, 0.2),
+    0 0 0 3px rgba(229, 231, 235, 0.9);
+}
+
+.app-navbar__btn--primary:hover {
+  transform: translateY(-1px);
+}
+
+.app-navbar__btn--ghost {
+  background: transparent;
+  color: var(--primary, #111827);
+  border-color: var(--primary, #111827);
+}
+
+.app-navbar__btn--ghost:hover {
+  transform: translateY(-1px);
+}
+
+/* Toggle button for mobile */
+.app-navbar__toggle {
+  display: none;
+  border: none;
+  border-radius: 999px;
+  padding: 0.3rem;
+  background: #111827;
+  color: #f9fafb;
+  cursor: pointer;
+}
+
+/* Mobile dropdown container */
+.app-navbar__mobile-menu {
+  display: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .app-navbar__inner {
+    padding: 0.6rem 1.1rem;
+  }
+
+  /* Hide desktop nav & actions */
+  .app-navbar__nav--desktop {
+    display: none;
+  }
+
+  .app-navbar__actions--desktop {
+    display: none;
+  }
+
+  .app-navbar__brand-subtitle {
+    display: none;
+  }
+
+  /* Show toggle button */
+  .app-navbar__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Mobile menu block */
+  .app-navbar__mobile-menu {
+    display: block;
+    border-top: 1px solid rgba(229, 231, 235, 0.9);
+    background: rgba(249, 250, 251, 0.98);
+    backdrop-filter: blur(8px);
+  }
+
+  .app-navbar__nav--mobile {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 1.1rem 0.3rem;
+    gap: 0.3rem;
+  }
+
+  .app-navbar__mobile-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0;
+    text-decoration: none;
+    color: var(--text, #111827);
+    border-bottom: 1px solid transparent;
+  }
+
+  .app-navbar__mobile-link--active {
+    font-weight: 600;
+    border-bottom-color: rgba(209, 213, 219, 1);
+  }
+
+  .app-navbar__actions--mobile {
+    padding: 0.4rem 1.1rem 0.7rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .app-navbar__btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-navbar__inner {
+    gap: 0.75rem;
+  }
+}
