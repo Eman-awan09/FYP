@@ -1,34 +1,82 @@
 # ==============================
-# Node Modules (Client + Server)
+# Dependencies
 # ==============================
-node_modules/cd
+node_modules/
 client/node_modules/
 server/node_modules/
+jspm_packages/
+bower_components/
 
 # ==============================
-# Environment Variables (IMPORTANT)
+# Environment Variables
 # ==============================
 .env
 .env.*
+!.env.example
 client/.env
 server/.env
 
 # ==============================
 # Logs
-
+# ==============================
 logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+lerna-debug.log*
 
 # ==============================
-# Build / Production Files
+# Runtime / PID
 # ==============================
+pids/
+*.pid
+*.pid.lock
+*.seed
+
+# ==============================
+# Build / Production
+# ==============================
+build/
+dist/
 client/build/
 client/dist/
 server/build/
-dist/
+.next/
+out/
+.nuxt/
+.svelte-kit/
+.vuepress/dist
+
+# ==============================
+# Coverage / Testing
+# ==============================
+coverage/
+.nyc_output/
+*.lcov
+
+# ==============================
+# Cache / Temp
+# ==============================
+.cache/
+.parcel-cache/
+.temp/
+.tmp/
+.eslintcache
+.stylelintcache
+.npm
+
+# ==============================
+# IDE / Editor
+# ==============================
+.vscode/
+.idea/
+.vscode-test/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.tsbuildinfo
 
 # ==============================
 # OS Files
@@ -37,28 +85,16 @@ dist/
 Thumbs.db
 
 # ==============================
-# IDE / Editor Files
+# Misc
 # ==============================
-.vscode/
-.idea/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-
-# ==============================
-# Cache / Temp Files
-# ==============================
-.cache/
-.tmp/
-.temp/
-
-# ==============================
-# Optional: Coverage & Testing
-# ==============================
-coverage/
-
-# ==============================
-# Optional: Misc
-# ==============================
+*.tgz
 *.local
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
