@@ -563,15 +563,20 @@ const AdminComplaintsPage = () => {
 
   const handleStatusChange = async (id, status, lock) => {
     try {
+      setLoading(true)
       await updateComplaintStatusAdminApi(id, { status, lock });
       toast(`Complaint ${status.toLowerCase()}.`);
       loadComplaints();
+
     } catch (error) {
       console.error("Error updating status:", error);
       const msg =
         error?.response?.data?.message ||
         "Failed to update complaint status.";
       toast(msg);
+    }
+    finally {
+      setLoading(false);
     }
   };
 
