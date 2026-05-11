@@ -303,3 +303,54 @@
     width: 100%;
   }
 }
+/* Department override field */
+.tchat-dept-field {
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.tchat-dept-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text, #111827);
+}
+
+.tchat-dept-input-wrapper {
+  display: flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  padding: 0.15rem 0.7rem;
+  background: #fff;
+}
+
+.tchat-dept-input-prefix {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted, #6b7280);
+  margin-right: 0.3rem;
+}
+
+.tchat-dept-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 0.82rem;
+  padding: 0.25rem 0;
+  font-family: inherit;
+  color: var(--text, #111827);
+  background: transparent;
+}
+
+.tchat-dept-input::placeholder {
+  color: var(--text-muted, #9ca3af);
+}
+
+.tchat-dept-hint {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-muted, #6b7280);
+}

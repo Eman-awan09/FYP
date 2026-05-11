@@ -356,14 +356,13 @@ const SideNav = ({ isOpen, isDesktop, onToggleSidebar, onCloseSidebar }) => {
     <>
       {/* Dark overlay when full sidebar open (only used visually on non-desktop OR when you want overlay even on desktop) */}
       <div
-        className={`sidenav-overlay ${
-          isOpen ? "sidenav-overlay--visible" : ""
-        }`}
+        className={`sidenav-overlay ${isOpen ? "sidenav-overlay--visible" : ""
+          }`}
         onClick={onCloseSidebar}
       />
 
       {/* Permanent Icon Rail (desktop only, triggers hover open) */}
-      {isDesktop && (
+      {/* {isDesktop && (
         <div
           className="sidenav-rail"
           onMouseEnter={handleRailMouseEnter}
@@ -390,8 +389,6 @@ const SideNav = ({ isOpen, isDesktop, onToggleSidebar, onCloseSidebar }) => {
           </nav>
         </div>
       )}
-
-      {/* Full Sidebar (overlay) */}
       <aside
         className={`sidenav ${
           isOpen ? "sidenav--open" : "sidenav--closed"
@@ -428,6 +425,91 @@ const SideNav = ({ isOpen, isDesktop, onToggleSidebar, onCloseSidebar }) => {
                 className={({ isActive: routeActive }) =>
                   `sidenav__link ${
                     routeActive || isActive ? "sidenav__link--active" : ""
+                  }`
+                }
+                onClick={handleNavItemClick}
+              >
+                <Icon className="sidenav__icon" />
+                <span className="sidenav__link-label">{label}</span>
+              </NavLink>
+            );
+          })}
+        </nav>
+      </aside> */}
+      {/* Permanent Icon Rail (desktop only) */}
+      {isDesktop && (
+        <div
+          className="sidenav-rail"
+          onMouseEnter={handleRailMouseEnter}
+        >
+          <div className="sidenav-rail__brand">
+            <div className="sidenav-rail__logo">
+              <img
+                src="/logofinal.jpeg"
+                alt="Campus Desk"
+                className="sidenav-logo-img"
+              />
+            </div>
+          </div>
+          <nav className="sidenav-rail__nav">
+            {itemsWithIcons.map(({ path, label, Icon }) => (
+              <NavLink
+                key={path}
+                to={path}
+                end
+                className={({ isActive }) =>
+                  `sidenav-rail__item ${isActive ? "sidenav-rail__item--active" : ""
+                  }`
+                }
+              >
+                <Icon className="sidenav-rail__icon" />
+                <span className="sidenav-rail__tooltip">{label}</span>
+              </NavLink>
+            ))}
+          </nav>
+        </div>
+      )}
+
+      {/* Full Sidebar */}
+      <aside
+        className={`sidenav ${isOpen ? "sidenav--open" : "sidenav--closed"}`}
+        onMouseLeave={handleSidebarMouseLeave}
+      >
+        <div className="sidenav__header">
+          <div className="sidenav__brand">
+            <div className="sidenav__logo">
+              <img
+                src="/logofinal.jpeg"
+                alt="Campus Desk"
+                className="sidenav-logo-img"
+              />
+            </div>
+            <div className="sidenav__brand-text">
+              <h2>Campus Desk</h2>
+              <small>{user.role}</small>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            className="sidenav__close-btn"
+            onClick={onCloseSidebar}
+            aria-label="Close sidebar"
+          >
+            ×
+          </button>
+        </div>
+
+        <nav className="sidenav__nav">
+          {itemsWithIcons.map(({ path, label, Icon }) => {
+            const isActive = location.pathname === path;
+            return (
+              <NavLink
+                key={path}
+                to={path}
+                end
+                className={({ isActive: routeActive }) =>
+                  `sidenav__link ${routeActive || isActive ? "sidenav__link--active" : ""
                   }`
                 }
                 onClick={handleNavItemClick}

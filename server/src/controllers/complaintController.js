@@ -438,14 +438,14 @@ const assignComplaintToServiceProvider = async (req, res, next) => {
 
     // It’s common to only assign after APPROVED, but we won’t strictly enforce here
     complaint.assignedTo = sp._id;
-
+    complaint.status = COMPLAINT_STATUSES.ASSIGNED;
     addHistoryEntry(
       complaint,
       complaint.status,
       admin._id,
       `Assigned to service provider ${sp.name || sp.email} by admin`
     );
-
+    
     await complaint.save();
 
     // Email notifications on assignment
@@ -488,7 +488,7 @@ const addComplaintAttachmentsBase64 = async (req, res, next) => {
     if (!complaint) {
       return res.status(404).json({ message: "Complaint not found." });
     }
-
+    
     if (complaint.locked || complaint.status !== COMPLAINT_STATUSES.PENDING) {
       return res.status(400).json({
         message:

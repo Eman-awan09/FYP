@@ -72,6 +72,22 @@ const createResourceRequest = async (req, res, next) => {
  * GET /api/resource-requests/my
  * List teacher's own resource requests.
  */
+// const getMyResourceRequests = async (req, res, next) => {
+//   try {
+//     const teacher = req.user;
+
+
+//     const requests = await ResourceRequest.find({
+//       requestedByTeacher: teacher._id,
+//     })
+//       .sort({ createdAt: -1 })
+//       .lean();
+
+//     res.json({ requests });
+//   } catch (error) {
+//     next(error);
+//   }
+// };
 const getMyResourceRequests = async (req, res, next) => {
   try {
     const teacher = req.user;
@@ -79,6 +95,8 @@ const getMyResourceRequests = async (req, res, next) => {
     const requests = await ResourceRequest.find({
       requestedByTeacher: teacher._id,
     })
+      .populate("handledByServerRoomStaff", "name email")
+      .populate("requestedByTeacher", "name email")
       .sort({ createdAt: -1 })
       .lean();
 
@@ -87,7 +105,6 @@ const getMyResourceRequests = async (req, res, next) => {
     next(error);
   }
 };
-
 /**
  * SERVER ROOM STAFF
  * GET /api/resource-requests
