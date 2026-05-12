@@ -607,7 +607,7 @@ const SrDashboard = () => {
             <table className="sr-table">
               <thead>
                 <tr>
-                  <th>ID</th>
+                  <th>Sr.</th>
                   <th>Teacher</th>
                   <th>Purpose</th>
                   <th>Time</th>
@@ -624,9 +624,9 @@ const SrDashboard = () => {
                     <td colSpan={5}>No requests scheduled for today.</td>
                   </tr>
                 ) : (
-                  todayRequests.map((r) => (
+                  todayRequests.map((r,index) => (
                     <tr key={r.id}>
-                      <td>{r.id}</td>
+                      <td>{index+1}</td>
                       <td>{r.teacher}</td>
                       <td>{r.purpose}</td>
                       <td>{r.time}</td>

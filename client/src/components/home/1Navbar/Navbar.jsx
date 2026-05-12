@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="nav-inner">
         {/* Left: Logo / Brand */}
         <Link to="/" className="nav-logo" onClick={closeMenu}>
-          <span className="nav-logo__text">CampusHub</span>
+          <span className="nav-logo__text">CampusDesk</span>
         </Link>
 
         {/* Center: Menu (desktop) */}

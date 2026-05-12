@@ -1135,7 +1135,7 @@ const SpDashboard = () => {
             <table className="spd-table">
               <thead>
                 <tr>
-                  <th>ID</th>
+                  <th>Sr.</th>
                   <th>Title</th>
                   <th>Category</th>
                   <th>Priority</th>
@@ -1157,9 +1157,9 @@ const SpDashboard = () => {
                     </td>
                   </tr>
                 ) : (
-                  recentAssigned.map((c) => (
+                  recentAssigned.map((c,index) => (
                     <tr key={c.id}>
-                      <td>{c.id}</td>
+                      <td>{index+1}</td>
                       <td>{c.title}</td>
                       <td>{c.category}</td>
                       <td>

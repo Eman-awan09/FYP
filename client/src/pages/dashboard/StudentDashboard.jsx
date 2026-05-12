@@ -817,7 +817,7 @@ const StudentDashboard = () => {
             <table className="sd-table">
               <thead>
                 <tr>
-                  <th>ID</th>
+                  <th>Sr.</th>
                   <th>Title</th>
                   <th>Category</th>
                   <th>Priority</th>
@@ -839,9 +839,9 @@ const StudentDashboard = () => {
                     </td>
                   </tr>
                 ) : (
-                  recentComplaints.map((c) => (
+                  recentComplaints.map((c,index) => (
                     <tr key={c.id}>
-                      <td>{c.id}</td>
+                      <td>{index+1}</td>
                       <td>{c.title}</td>
                       <td>{c.category}</td>
                       <td>
